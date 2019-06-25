@@ -1,0 +1,28 @@
+	
+
+	\renewcommand\contentsname{Tagesordnung}
+	
+	
+	%\setlength\cftsecnumwidth{4em}
+	%\setlength\cftsubsecnumwidth{5em}
+	%\setlength\cftsubsubsecnumwidth{6em}
+	%
+	\addtocontents{toc}{\cftpagenumbersoff{section}}
+	\addtocontents{toc}{\cftpagenumbersoff{subsection}}
+	\addtocontents{toc}{\cftpagenumbersoff{subsubsection}}
+	
+	%
+	%\renewcommand{\cftsecafterpnum}{\hspace*{10em}}
+	%\renewcommand{\cftsubsecafterpnum}{\hspace*{10em}}
+	%\renewcommand{\cftsubsubsecafterpnum}{\hspace*{12em}}
+	%
+	
+\cftsetindents{section}{7em}{0.8in}
+\cftsetindents{subsection}{7em}{1in}
+\cftsetindents{subsubsection}{8em}{1in}
+
+	\begin{center}
+		%\footnotesize
+		\tableofcontents
+	\end{center}
+	

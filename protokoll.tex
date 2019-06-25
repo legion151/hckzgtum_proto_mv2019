@@ -1,0 +1,103 @@
+%% Basierend auf einer TeXnicCenter-Vorlage von Tino Weinkauf.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,oneside,12pt]{article}
+%	Papiergröße: a4paper / a5paper / b5paper / letterpaper / legalpaper / executivepaper
+% Duplex: oneside / twoside
+% Grundlegende Fontgrößen: 10pt / 11pt / 12pt
+
+
+%% Deutsche Anpassungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+
+%\usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
+
+
+%% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} %%Zum Laden von Grafiken
+
+
+%% Andere Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage{a4wide} %%Kleinere Seitenränder = mehr Text pro Zeile.
+\usepackage{tocloft}
+
+\usepackage{float}
+
+\usepackage{sectsty}
+\usepackage{array}
+\usepackage{svg}
+\setsvg{inkscape = inkscape -z -D}
+\usepackage{setspace}
+\usepackage{keyval}
+\usepackage{todonotes}
+
+\usepackage{pdfpages}
+
+\usepackage{fancyhdr}
+\rfoot{Seite \thepage \ von \pageref{LAST_PAGE}}
+\lfoot{\myDate}
+\cfoot{\tiny powered by \LaTeX}
+\lhead{MV 24.04.2016 des Hackzogtum Coburg e.V.}
+\rhead{
+\includesvg[width=0.15\textwidth]{logo}
+}
+%\renewcommand{\headrulewidth}{0pt}
+
+\setlength\headheight{40pt}
+
+\sectionfont{\fontsize{13}{15}\selectfont}
+\subsectionfont{\fontsize{13}{15}\selectfont}
+%\subsubsectionfont{\fontsize{13}{15}\selectfont}
+
+\renewcommand{\thesection}{TOP \arabic{section}}
+\setlength{\parindent}{0pt}
+
+
+\input{votings}
+
+\begin{document}
+
+\pagestyle{empty}
+\tocloftpagestyle{empty}
+
+
+\begin{center}
+	\includesvg[width=0.60\textwidth]{logo}
+\end{center}
+\vspace{1cm}
+
+
+
+
+\input{data}
+\pagebreak
+\pagestyle{fancy}
+\input{order}
+\pagebreak
+\spacing{1.1}
+\setcounter{page}{1}
+\input{content}
+
+\input{signing}
+
+
+%\pagebreak{}
+
+
+\label{LAST_PAGE}
+\includepdf{einladMV19_hckztm}
+
+\includepdf[pages=-]{pic/anw.pdf} 
+\includepdf[pages=-]{pic/pruefbericht_a.pdf} 
+\includepdf[pages=-]{pic/pruefbericht_b.pdf} 
+
+
+\end{document}
+
